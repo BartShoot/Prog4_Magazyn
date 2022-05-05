@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Magazyn.Migrations
 {
     [DbContext(typeof(MagazynDBContext))]
-    [Migration("20220504114003_Initial")]
+    [Migration("20220505121337_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

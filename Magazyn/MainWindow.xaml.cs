@@ -38,23 +38,26 @@ namespace Magazyn
                 {
                     dt.Load(reader);
                 }
+                DataGrid1.DataContext = dt;
+                dt.Clear();
                 using (var reader = ObjectReader.Create(context.Prowadnice))
                 {
                     dt.Load(reader);
                 }
-                using (var reader = ObjectReader.Create(context.Uchwyty))
-                {
-                    dt.Load(reader);
-                }
-                using (var reader = ObjectReader.Create(context.Plyty))
-                {
-                    dt.Load(reader);
-                }
-                using (var reader = ObjectReader.Create(context.Akcesoria))
-                {
-                    dt.Load(reader);
-                }
-                DataGrid1.DataContext = dt;
+                DataGrid2.DataContext = dt;
+                //using (var reader = ObjectReader.Create(context.Uchwyty))
+                //{
+                //    dt.Load(reader);
+                //}
+                //using (var reader = ObjectReader.Create(context.Plyty))
+                //{
+                //    dt.Load(reader);
+                //}
+                //using (var reader = ObjectReader.Create(context.Akcesoria))
+                //{
+                //    dt.Load(reader);
+                //}
+                //DataGrid1.DataContext = dt;
             }
         }
     }

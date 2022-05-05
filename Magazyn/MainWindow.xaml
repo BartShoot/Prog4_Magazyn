@@ -7,7 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="OnLoad">
     <Grid>
-        <DataGrid x:Name="DataGrid1" ItemsSource="{Binding}"/>
+        
+        <TabControl>
+            <TabItem Header="Tab1">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="DataGrid1" ItemsSource="{Binding}"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tab2">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="DataGrid2" ItemsSource="{Binding}"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>

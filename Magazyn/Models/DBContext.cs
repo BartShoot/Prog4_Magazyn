@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.SqlServer;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,16 +19,10 @@ namespace Magazyn.Models
         public DbSet<Zawiasy> Zawiasy { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string temp = "Data Source=(localdb)\\MSSQLLocalDB;" +
-                "Initial Catalog = " +
-                System.AppDomain.CurrentDomain.BaseDirectory +
-                "\\MAGAZYN.MDF;Integrated Security = True;" +
-                "Connect Timeout = 5;" +
-                "Encrypt = False;" +
-                "TrustServerCertificate = False;" +
-                "ApplicationIntent = ReadWrite;" +
-                "MultiSubnetFailover = False";
-            optionsBuilder.UseSqlServer(temp);
+            string temp = "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+                "AttachDbFilename="+Path.GetFullPath("MAGAZYN.mdf") +
+                ";Integrated Security=True;";
+            optionsBuilder.UseSqlServer(temp,options => options.EnableRetryOnFailure());
         }
     }
 }
