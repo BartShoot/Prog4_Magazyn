@@ -25,6 +25,7 @@ namespace Magazyn
     {
         public MainWindow()
         {
+            AppDomain.CurrentDomain.SetData("DataDirectory", System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Databases"));
             InitializeComponent();
         }
 
