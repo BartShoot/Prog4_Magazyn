@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Reflection;
 using Magazyn;
+using System.Windows.Controls;
 
 namespace Magazyn.CRUD
 {
@@ -35,13 +36,7 @@ namespace Magazyn.CRUD
 
         public void Insert()
         {
-            Zawiasy zawias = new();
-            AddDialog add = new();
-            foreach (var propInfo in zawias.GetType().GetProperties())
-            {
-                add.AddTextBox(propInfo.Name);
-            }
-            add.Show();
+            throw new NotImplementedException();
         }
 
         public void Update()

@@ -7,7 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="OnLoad">
     <Window.Resources>
+        <Style TargetType="Window">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+        </Style>
+
+        <Style TargetType="TabItem">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5,5,0,0"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        
         <Style TargetType="Button">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Style.Resources>
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Padding" Value="5,2"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
