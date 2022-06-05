@@ -8,22 +8,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <Style TargetType="RadioButton">
-            <Setter Property="Margin" Value="5"/>
-        </Style>
+        <Style TargetType="RadioButton" BasedOn="{StaticResource NavButton}"/>
     </UserControl.Resources>
-    <Grid>
+    <Grid RenderOptions.EdgeMode="Aliased">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Label Content="Magazyn" FontSize="20" Padding="10" Foreground="LightGray" Background="{StaticResource BrushPrimary1}"/>
+        <Label Content="Magazyn" FontSize="25" Padding="10" Foreground="LightGray" Background="{StaticResource BrushPrimary1}"/>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Background="{StaticResource BrushPrimary2}">
-            <RadioButton Foreground="LightGray" Content="Zawiasy" Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Zawias}"/>
-            <RadioButton Foreground="LightGray" Content="Prowadnice" Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Prowadnice}"/>
-            <RadioButton Foreground="LightGray" Content="Uchwyty" Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Uchwyty}"/>
-            <RadioButton Foreground="LightGray" Content="Akcesoria" Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Akcesoria}"/>
-            <RadioButton Foreground="LightGray" Content="Płyty" Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Płyty}"/>
+            <RadioButton Content="Zawiasy"      CommandParameter="{x:Static nav:ViewType.Zawias}"/>
+            <RadioButton Content="Prowadnice"   CommandParameter="{x:Static nav:ViewType.Prowadnice}"/>
+            <RadioButton Content="Uchwyty"      CommandParameter="{x:Static nav:ViewType.Uchwyty}"/>
+            <RadioButton Content="Akcesoria"    CommandParameter="{x:Static nav:ViewType.Akcesoria}"/>
+            <RadioButton Content="Płyty"        CommandParameter="{x:Static nav:ViewType.Płyty}"/>
         </StackPanel>
     </Grid>
 </UserControl>
