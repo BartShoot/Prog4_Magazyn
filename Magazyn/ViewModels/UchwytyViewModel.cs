@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Magazyn.ViewModels
 {
-    public class ViewModelBase
+    public class UchwytyViewModel : ViewModelBase
     {
     }
 }

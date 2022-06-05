@@ -14,7 +14,6 @@ namespace Magazyn
     {
         public MainWindow()
         {
-            //AppDomain.CurrentDomain.SetData("DataDirectory", System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Databases"));
             InitializeComponent();
         }
 
@@ -59,9 +58,9 @@ namespace Magazyn
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var test = new ZawiasAdd();
+            //var test = new ZawiasAdd();
             var container = new Window();
-            container.Content = test;
+            //container.Content = test;
             container.Show();
         }
     }

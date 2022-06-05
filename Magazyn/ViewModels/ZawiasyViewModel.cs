@@ -5,7 +5,7 @@ using Magazyn.Models;
 namespace Magazyn.ViewModels
 {
     [INotifyPropertyChanged]
-    public partial class ZawiasyViewModel
+    public partial class ZawiasyViewModel : ViewModelBase
     {
         public Zawiasy _zawias = new Zawiasy();
         [ObservableProperty]
