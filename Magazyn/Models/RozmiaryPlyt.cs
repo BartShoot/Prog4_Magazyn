@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 namespace Magazyn.Models
 {
     [Table("RozmiaryPlyt")]
-    public class RozmiaryPlyt
+    public class RozmiaryPlyt : DomainObject
     {
-        [Key]
-        public int RozmiarPlytyID { get; set; }
         [Required]
         public int Dlugosc { get; set; }
         [Required]

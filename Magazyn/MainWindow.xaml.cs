@@ -1,6 +1,6 @@
 ﻿using FastMember;
-using Magazyn.CRUD;
 using Magazyn.Models;
+using Magazyn.Views;
 using System;
 using System.Data;
 using System.Windows;
@@ -14,19 +14,21 @@ namespace Magazyn
     {
         public MainWindow()
         {
-            AppDomain.CurrentDomain.SetData("DataDirectory", System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Databases"));
+            //AppDomain.CurrentDomain.SetData("DataDirectory", System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Databases"));
             InitializeComponent();
         }
 
         private void OnLoad(object sender, RoutedEventArgs e)
         {
-            DataTable dt = new();
-
-            dt = ZawiasyCRUD.Instance.GetAll();
-            DataGridZawiasy.DataContext = dt;
-
-            using (var context = new MagazynDBContext())
+            /*
+            using (MagazynDBContext context = _contextFactory.Create())
             {
+                DataTable dt = new();
+                using (var reader = ObjectReader.Create(context.Zawiasy))
+                {
+                    dt.Load(reader);
+                }
+                DataGridZawiasy.DataContext = dt;
                 dt = new();
                 using (var reader = ObjectReader.Create(context.Uchwyty))
                 {
@@ -52,11 +54,15 @@ namespace Magazyn
                 }
                 DataGridPlyty.DataContext = dt;
             }
+            */
         }
 
-        private void ZawiasyInsert(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ZawiasyCRUD.Instance.Insert();
+            var test = new ZawiasAdd();
+            var container = new Window();
+            container.Content = test;
+            container.Show();
         }
     }
 }

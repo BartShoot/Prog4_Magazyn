@@ -9,14 +9,12 @@ using System.Threading.Tasks;
 namespace Magazyn.Models
 {
     [Table("Plyty")]
-    public class Plyty
+    public class Plyty : DomainObject
     {
         public Plyty()
         {
             RozmiaryPlyt = new HashSet<RozmiaryPlyt>();
         }
-        [Key]
-        public int PlytyID { get; set; }
         [Required]
         public string Firma { get; set; }
         [Required]

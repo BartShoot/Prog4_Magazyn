@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 namespace Magazyn.Models
 {
     [Table("Uchwyty")]
-    public class Uchwyty
+    public class Uchwyty : DomainObject
     {
-        [Key]
-        public int UchwytID { get; set; }
         [Required]
         public string Firma { get; set; }
         [Required]
