@@ -16,6 +16,7 @@ namespace Magazyn.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Firma = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Nazwa = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Cena = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Ilosc = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

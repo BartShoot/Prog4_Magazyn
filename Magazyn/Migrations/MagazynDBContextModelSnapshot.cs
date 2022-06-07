@@ -29,6 +29,9 @@ namespace Magazyn.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<decimal>("Cena")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("Firma")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

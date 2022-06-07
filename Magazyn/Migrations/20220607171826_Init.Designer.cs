@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Magazyn.Migrations
 {
     [DbContext(typeof(MagazynDBContext))]
-    [Migration("20220607151411_Init")]
+    [Migration("20220607171826_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,6 +30,9 @@ namespace Magazyn.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<decimal>("Cena")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Firma")
                         .IsRequired()

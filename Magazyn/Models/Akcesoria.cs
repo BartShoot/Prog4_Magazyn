@@ -16,6 +16,8 @@ namespace Magazyn.Models
         [Required]
         public string Nazwa { get; set; }
         [Required]
+        public decimal Cena { get; set; }
+        [Required]
         public int Ilosc { get; set; }
     }
 }

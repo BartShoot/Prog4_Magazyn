@@ -23,6 +23,10 @@
                 <views:ProwadniceView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewmodels:AkcesoriaViewModel}">
+                <views:AkcesoriaView/>
+            </DataTemplate>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>
