@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Magazyn"
         xmlns:controls="clr-namespace:Magazyn.Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="OnLoad">
+        Title="MainWindow" Height="450" Width="800">
 
     <Grid>
         <Grid.RowDefinitions>

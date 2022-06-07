@@ -1,5 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Magazyn.Commands;
+﻿using Magazyn.Commands;
+using Magazyn.Models;
 using Magazyn.ViewModels;
 using System;
 using System.ComponentModel;

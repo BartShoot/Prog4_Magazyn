@@ -3,21 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Magazyn.Views"
+             xmlns:local="clr-namespace:Magazyn.Views" 
+             xmlns:ViewModel="clr-namespace:Magazyn.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <ViewModel:ZawiasyViewModel/>
+    </UserControl.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1">
-            <Button>Dodaj</Button>
+            <Button Command="{Binding OpenAddWindowCommand}">Dodaj</Button>
             <Button>Edytuj</Button>
             <Button>Usuń</Button>
+            <Label Content="{Binding _zawias}"/>
         </StackPanel>
-        <DataGrid x:Name="ZawiasyDataGrid" ItemsSource="{Binding}">
-            
+        <DataGrid ItemsSource="{Binding ListaZawiasow}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Firma" Binding="{Binding ElementName=Firma}"/>
+                <DataGridTextColumn Header="Model" Binding="{Binding ElementName=Model}"/>
+                <DataGridTextColumn Header="Cena" Binding="{Binding ElementName=Cena}"/>
+                <DataGridTextColumn Header="Ilość" Binding="{Binding ElementName=Ilosc}"/>
+                <DataGridTextColumn Header="Kąt Otwarcia" Binding="{Binding ElementName=KatOtwarcia}"/>
+                <DataGridCheckBoxColumn Header="Hamulec" Binding="{Binding ElementName=Hamulec}" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Header="Sprężyna" Binding="{Binding ElementName=Sprezyna}" IsReadOnly="True"/>
+            </DataGrid.Columns>
         </DataGrid>
     </Grid>
 </UserControl>

@@ -12,7 +12,7 @@ namespace Magazyn.Migrations
                 name: "Akcesoria",
                 columns: table => new
                 {
-                    AkcesoriaID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Firma = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Nazwa = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -20,14 +20,14 @@ namespace Magazyn.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Akcesoria", x => x.AkcesoriaID);
+                    table.PrimaryKey("PK_Akcesoria", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Plyty",
                 columns: table => new
                 {
-                    PlytyID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Firma = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Kolor = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -35,14 +35,14 @@ namespace Magazyn.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Plyty", x => x.PlytyID);
+                    table.PrimaryKey("PK_Plyty", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Prowadnice",
                 columns: table => new
                 {
-                    ProwadniceID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Firma = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -53,14 +53,14 @@ namespace Magazyn.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Prowadnice", x => x.ProwadniceID);
+                    table.PrimaryKey("PK_Prowadnice", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Uchwyty",
                 columns: table => new
                 {
-                    UchwytID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Firma = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -71,14 +71,14 @@ namespace Magazyn.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Uchwyty", x => x.UchwytID);
+                    table.PrimaryKey("PK_Uchwyty", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Zawiasy",
                 columns: table => new
                 {
-                    ZawiasID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Firma = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -90,14 +90,14 @@ namespace Magazyn.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Zawiasy", x => x.ZawiasID);
+                    table.PrimaryKey("PK_Zawiasy", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "RozmiaryPlyt",
                 columns: table => new
                 {
-                    RozmiarPlytyID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Dlugosc = table.Column<int>(type: "int", nullable: false),
                     Szerokosc = table.Column<int>(type: "int", nullable: false),
@@ -107,12 +107,12 @@ namespace Magazyn.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RozmiaryPlyt", x => x.RozmiarPlytyID);
+                    table.PrimaryKey("PK_RozmiaryPlyt", x => x.Id);
                     table.ForeignKey(
                         name: "FK_RozmiaryPlyt_Plyty_PlytaID",
                         column: x => x.PlytaID,
                         principalTable: "Plyty",
-                        principalColumn: "PlytyID",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
