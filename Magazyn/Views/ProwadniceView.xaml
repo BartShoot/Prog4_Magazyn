@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Magazyn.Views.UchwytyView"
+﻿<UserControl x:Class="Magazyn.Views.ProwadniceView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
-        <ViewModel:UchwytyViewModel/>
+        <ViewModel:ProwadniceViewModel/>
     </UserControl.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -16,18 +16,18 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1">
             <Button Command="{Binding OpenAddWindowCommand}">Dodaj</Button>
-            <Button Command="{Binding OpenEditWindowCommand}" CommandParameter="{Binding ElementName=UchwytGrid, Path=SelectedItem, UpdateSourceTrigger=PropertyChanged}">Edytuj</Button>
-            <Button Command="{Binding DeleteUchwytCommand}" CommandParameter="{Binding ElementName=UchwytGrid, Path=SelectedItem, UpdateSourceTrigger=PropertyChanged}" >Usuń</Button>
+            <Button Command="{Binding OpenEditWindowCommand}" CommandParameter="{Binding ElementName=ProwadnicaGrid, Path=SelectedItem, UpdateSourceTrigger=PropertyChanged}">Edytuj</Button>
+            <Button Command="{Binding DeleteProwadniceCommand}" CommandParameter="{Binding ElementName=ProwadnicaGrid, Path=SelectedItem, UpdateSourceTrigger=PropertyChanged}" >Usuń</Button>
         </StackPanel>
-        <DataGrid Name="UchwytGrid" IsReadOnly="True" ItemsSource="{Binding ListaUchwytow, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False">
+        <DataGrid Name="ProwadnicaGrid" IsReadOnly="True" ItemsSource="{Binding ListaProwadnic, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Firma" Binding="{Binding Firma}"/>
                 <DataGridTextColumn Header="Model" Binding="{Binding Model}"/>
                 <DataGridTextColumn Header="Cena" Binding="{Binding Cena, StringFormat=C2}"/>
                 <DataGridTextColumn Header="Ilość" Binding="{Binding Ilosc}"/>
-                <DataGridTextColumn Header="Rozstaw" Binding="{Binding Rozstaw, StringFormat={}{0} mm}"/>
-                <DataGridTextColumn Header="Kolor" Binding="{Binding Kolor}"/>
+                <DataGridTextColumn Header="Długość" Binding="{Binding Dlugosc, StringFormat={}{0} mm}"/>
+                <DataGridCheckBoxColumn Header="Samodomyk" Binding="{Binding Samodomyk}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -18,9 +18,9 @@ namespace Magazyn.ViewModels
         public UchwytyViewModel()
         {
             _uchwyt = new();
-            DeleteUchwytCommand = new RelayCommand<Uchwyty>((param) => DeleteUchwyt(param));
             AddUchwytCommand = new RelayCommand(AddUchwyt);
             UpdateUchwytCommand = new RelayCommand<Uchwyty>((param) => UpdateUchwyt(param));
+            DeleteUchwytCommand = new RelayCommand<Uchwyty>((param) => DeleteUchwyt(param));
             OpenAddWindowCommand = new RelayCommand(OpenAddWindow);
             OpenEditWindowCommand = new RelayCommand<Uchwyty>((param) => OpenEditWindow(param));
 
@@ -31,7 +31,7 @@ namespace Magazyn.ViewModels
                 ListaUchwytow.Add(item);
             }
         }
-        public UchwytyViewModel(Uchwyty uchwyt)
+        public UchwytyViewModel(Uchwyty uchwyt) : this()
         {
             _uchwyt = new Uchwyty
             {

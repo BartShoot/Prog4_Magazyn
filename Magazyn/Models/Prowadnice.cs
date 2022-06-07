@@ -20,7 +20,7 @@ namespace Magazyn.Models
         [Required]
         public int Ilosc { get; set; }
         [Required]
-        public decimal Dlugosc { get; set; }
+        public int Dlugosc { get; set; }
         [Required]
         public bool Samodomyk { get; set; }
     }

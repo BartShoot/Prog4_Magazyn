@@ -27,7 +27,7 @@
                 <DataGridTextColumn Header="Model" Binding="{Binding Model}"/>
                 <DataGridTextColumn Header="Cena" Binding="{Binding Cena, StringFormat=C2}"/>
                 <DataGridTextColumn Header="Ilość" Binding="{Binding Ilosc}"/>
-                <DataGridTextColumn Header="Kąt Otwarcia" Binding="{Binding KatOtwarcia}"/>
+                <DataGridTextColumn Header="Kąt Otwarcia" Binding="{Binding KatOtwarcia, StringFormat={}{0}°}"/>
                 <DataGridCheckBoxColumn Header="Hamulec" Binding="{Binding Hamulec}"/>
                 <DataGridCheckBoxColumn Header="Sprężyna" Binding="{Binding Sprezyna}"/>
             </DataGrid.Columns>

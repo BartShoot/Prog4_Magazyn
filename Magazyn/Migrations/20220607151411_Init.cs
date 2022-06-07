@@ -48,7 +48,7 @@ namespace Magazyn.Migrations
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Cena = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Ilosc = table.Column<int>(type: "int", nullable: false),
-                    Dlugosc = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Dlugosc = table.Column<int>(type: "int", nullable: false),
                     Samodomyk = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>

@@ -19,6 +19,10 @@
                 <views:UchwytyView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewmodels:ProwadniceViewModel}">
+                <views:ProwadniceView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

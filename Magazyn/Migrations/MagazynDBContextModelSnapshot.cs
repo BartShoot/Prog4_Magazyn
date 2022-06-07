@@ -81,8 +81,8 @@ namespace Magazyn.Migrations
                     b.Property<decimal>("Cena")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("Dlugosc")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("Dlugosc")
+                        .HasColumnType("int");
 
                     b.Property<string>("Firma")
                         .IsRequired()

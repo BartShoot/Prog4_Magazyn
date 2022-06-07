@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Magazyn.Migrations
 {
     [DbContext(typeof(MagazynDBContext))]
-    [Migration("20220607090921_Init")]
+    [Migration("20220607151411_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -83,8 +83,8 @@ namespace Magazyn.Migrations
                     b.Property<decimal>("Cena")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("Dlugosc")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("Dlugosc")
+                        .HasColumnType("int");
 
                     b.Property<string>("Firma")
                         .IsRequired()
