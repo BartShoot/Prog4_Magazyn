@@ -21,7 +21,7 @@
         </StackPanel>
         <DataGrid Name="PlytyGrid" IsReadOnly="True" ItemsSource="{Binding ListaPlyt, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" ElementStyle="{StaticResource RightAlignStyle}"/>
                 <DataGridTextColumn Header="Firma" Binding="{Binding Firma}"/>
                 <DataGridTextColumn Header="Kolor" Binding="{Binding Kolor}"/>
                 <DataGridTextColumn Header="Typ" Binding="{Binding Typ}"/>

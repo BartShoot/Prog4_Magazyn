@@ -174,6 +174,7 @@ namespace Magazyn.ViewModels
                 Title = "Dodaj uchwyt",
                 Content = new UchwytyAdd()
             };
+            window.SizeToContent = SizeToContent.WidthAndHeight;
             window.Show();
         }
         public ICommand OpenEditWindowCommand { get; set; }
@@ -186,6 +187,7 @@ namespace Magazyn.ViewModels
                 Content = new UchwytyEdit()
             };
             window.DataContext = new UchwytyViewModel(param);
+            window.SizeToContent = SizeToContent.WidthAndHeight;
             window.Show();
         }
     }

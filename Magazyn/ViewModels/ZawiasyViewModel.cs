@@ -192,7 +192,7 @@ namespace Magazyn.ViewModels
                 Title = "Dodaj zawias",
                 Content = new ZawiasyAdd()
             };
-
+            window.SizeToContent = SizeToContent.WidthAndHeight;
             window.Show();
         }
         public ICommand OpenEditWindowCommand { get; set; }
@@ -205,6 +205,7 @@ namespace Magazyn.ViewModels
                 Content = new ZawiasyEdit()
             };
             window.DataContext = new ZawiasyViewModel(param);
+            window.SizeToContent = SizeToContent.WidthAndHeight;
             window.Show();
         }
     }

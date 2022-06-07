@@ -40,6 +40,7 @@ namespace Magazyn.ViewModels
                 Id = plyty.Id,
                 Firma = plyty.Firma,
                 Kolor = plyty.Kolor,
+                Typ = plyty.Typ
             };
             _firma = plyty.Firma;
             _kolor = plyty.Kolor;
@@ -144,6 +145,7 @@ namespace Magazyn.ViewModels
                 Title = "Dodaj uchwyt",
                 Content = new PlytyAdd()
             };
+            window.SizeToContent = SizeToContent.WidthAndHeight;
             window.Show();
         }
         public ICommand OpenEditWindowCommand { get; set; }
@@ -156,6 +158,7 @@ namespace Magazyn.ViewModels
                 Content = new PlytyEdit()
             };
             window.DataContext = new PlytyViewModel(param);
+            window.SizeToContent = SizeToContent.WidthAndHeight;
             window.Show();
         }
     }

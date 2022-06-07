@@ -22,14 +22,14 @@
         </StackPanel>
         <DataGrid Name="ZawiasGrid" IsReadOnly="True" ItemsSource="{Binding ListaZawiasow, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" ElementStyle="{StaticResource RightAlignStyle}"/>
                 <DataGridTextColumn Header="Firma" Binding="{Binding Firma}"/>
                 <DataGridTextColumn Header="Model" Binding="{Binding Model}"/>
-                <DataGridTextColumn Header="Cena" Binding="{Binding Cena, StringFormat=C2}"/>
-                <DataGridTextColumn Header="Ilość" Binding="{Binding Ilosc}"/>
-                <DataGridTextColumn Header="Kąt Otwarcia" Binding="{Binding KatOtwarcia, StringFormat={}{0}°}"/>
-                <DataGridCheckBoxColumn Header="Hamulec" Binding="{Binding Hamulec}"/>
-                <DataGridCheckBoxColumn Header="Sprężyna" Binding="{Binding Sprezyna}"/>
+                <DataGridTextColumn Header="Cena" Binding="{Binding Cena, StringFormat=C2}" ElementStyle="{StaticResource RightAlignStyle}"/>
+                <DataGridTextColumn Header="Ilość" Binding="{Binding Ilosc}" ElementStyle="{StaticResource RightAlignStyle}"/>
+                <DataGridTextColumn Header="Kąt Otwarcia" Binding="{Binding KatOtwarcia, StringFormat={}{0}°}" ElementStyle="{StaticResource RightAlignStyle}"/>
+                <DataGridTextColumn Header="Hamulec" Binding="{Binding Hamulec, Converter={StaticResource BoolValueConverter}}" ElementStyle="{StaticResource RightAlignStyle}"/>
+                <DataGridTextColumn Header="Sprężyna" Binding="{Binding Sprezyna, Converter={StaticResource BoolValueConverter}}" ElementStyle="{StaticResource RightAlignStyle}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

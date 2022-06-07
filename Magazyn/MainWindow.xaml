@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Magazyn"
         xmlns:controls="clr-namespace:Magazyn.Controls" xmlns:navigators="clr-namespace:Magazyn.State.Navigators" d:DataContext="{d:DesignInstance Type=navigators:Navigator}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Magazyn" Height="450" Width="800">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -15,6 +15,6 @@
         </Grid.RowDefinitions>
 
         <controls:NavigationBar DataContext="{Binding Navigator}"/>
-        <ContentControl Grid.Row="1" Background="Aqua" Content="{Binding Navigator.CurrentViewModel}"/>
+        <ContentControl Grid.Row="1" Content="{Binding Navigator.CurrentViewModel}"/>
     </Grid>
 </Window>

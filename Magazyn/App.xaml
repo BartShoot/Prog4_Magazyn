@@ -31,6 +31,10 @@
                 <views:PlytyView/>
             </DataTemplate>
 
+            <Style x:Key="ShadowStyle">
+                <Setter Property="Control.Foreground" Value="LightGray" />
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -21,11 +21,11 @@
         </StackPanel>
         <DataGrid Name="AkcesoriaGrid" IsReadOnly="True" ItemsSource="{Binding ListaAkcesoriow, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" ElementStyle="{StaticResource RightAlignStyle}"/>
                 <DataGridTextColumn Header="Firma" Binding="{Binding Firma}"/>
                 <DataGridTextColumn Header="Model" Binding="{Binding Nazwa}"/>
-                <DataGridTextColumn Header="Cena" Binding="{Binding Cena, StringFormat=C2}"/>
-                <DataGridTextColumn Header="Ilość" Binding="{Binding Ilosc}"/>
+                <DataGridTextColumn Header="Cena" Binding="{Binding Cena, StringFormat=C2}" ElementStyle="{StaticResource RightAlignStyle}"/>
+                <DataGridTextColumn Header="Ilość" Binding="{Binding Ilosc}" ElementStyle="{StaticResource RightAlignStyle}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

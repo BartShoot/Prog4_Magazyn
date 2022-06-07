@@ -16,5 +16,10 @@ namespace Magazyn
         {
             InitializeComponent();
         }
+
+        private void NavigationBar_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -11,14 +11,19 @@ namespace Magazyn.Models
     [Table("Zawiasy")]
     public class Zawiasy : DomainObject
     {
+        [MinLength(2)]
         [Required]
         public string Firma { get; set; }
+        [MinLength(2)]
         [Required]
         public string Model { get; set; }
+        [Range(0,int.MaxValue)]
         [Required]
         public decimal Cena { get; set; }
+        [Range(0, int.MaxValue)]
         [Required]
         public int Ilosc { get; set; }
+        [Range(0, int.MaxValue)]
         [Required]
         public int KatOtwarcia { get; set; }
         [Required]

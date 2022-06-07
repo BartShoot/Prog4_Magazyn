@@ -6,47 +6,99 @@
              xmlns:local="clr-namespace:Magazyn.Views" 
              xmlns:viewmodel="clr-namespace:Magazyn.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             Height="Auto" Width="Auto">
     <UserControl.DataContext>
         <viewmodel:ZawiasyViewModel/>
     </UserControl.DataContext>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-        <Label Content="Firma"/>
-        <TextBox Grid.Column="1" Text="{Binding Firma}"/>
-        <Label Grid.Row="1" Content="Model"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Model}"/>
-        <Label Grid.Row="2" Content="Cena"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Cena}"/>
-        <Label Grid.Row="3" Content="Ilość"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Ilosc}"/>
-        <Label Grid.Row="4" Content="Kąt Otwarcia"/>
-        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding KatOtwarcia}"/>
-        <Label Grid.Row="5" Content="Hamulec"/>
-        <CheckBox Grid.Row="5" Grid.Column="1" IsChecked="{Binding Hamulec}"/>
-        <Label Grid.Row="6" Content="Sprężyna"/>
-        <CheckBox Grid.Row="6" Grid.Column="1" IsChecked="{Binding Sprezyna}"/>
-        <Button Grid.Row="7" Grid.Column="1" Content="Zapisz" Command="{Binding AddZawiasCommand}"/>
-        <TextBlock Grid.Column="2" Text="{Binding Firma}"/>
-        <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding Model}"/>
-        <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding Cena}"/>
-        <TextBlock Grid.Column="2" Grid.Row="3" Text="{Binding Ilosc}"/>
-        <TextBlock Grid.Column="2" Grid.Row="4" Text="{Binding KatOtwarcia}"/>
-        <TextBlock Grid.Column="2" Grid.Row="5" Text="{Binding Hamulec}"/>
-        <TextBlock Grid.Column="2" Grid.Row="6" Text="{Binding Sprezyna}"/>
-    </Grid>
+    <UserControl.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="Margin" Value="50"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="10,5"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="MinWidth" Value="100"/>
+            <Setter Property="Padding" Value="3"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Firma"/>
+            <TextBox Grid.Column="1" Text="{Binding Firma}"/>
+            <Label Grid.Row="1" Content="Model"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Model}"/>
+            <Label Grid.Row="2" Content="Cena"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Cena}"/>
+            <Label Grid.Row="3" Content="Ilość"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Ilosc}"/>
+            <Label Grid.Row="4" Content="Kąt Otwarcia"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding KatOtwarcia}"/>
+            <Label Grid.Row="5" Content="Hamulec"/>
+            <CheckBox Grid.Row="5" Grid.Column="1" IsChecked="{Binding Hamulec}"/>
+            <Label Grid.Row="6" Content="Sprężyna"/>
+            <CheckBox Grid.Row="6" Grid.Column="1" IsChecked="{Binding Sprezyna}"/>
+            <Button Grid.Row="7" Grid.Column="1" Content="Zapisz" Command="{Binding AddZawiasCommand}"/>
+            
+        </Grid>
+        <Border BorderBrush="{StaticResource BrushPrimary1}" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2" Margin="50">
+            <Grid MinWidth="150" Margin="10" Height="Auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.ColumnSpan="2" FontSize="15" FontWeight="SemiBold" Text="Podgląd:"/>
+                <TextBlock Grid.Row="1" Text="Firma: "/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Firma}"/>
+                <TextBlock Grid.Row="2" Text="Model: "/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Model}"/>
+                <TextBlock Grid.Row="3" Text="Cena: "/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Cena, StringFormat=C2}"/>
+                <TextBlock Grid.Row="4" Text="Ilość: "/>
+                <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Ilosc}"/>
+                <TextBlock Grid.Row="5" Text="Kąt Otwarcia: "/>
+                <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding KatOtwarcia}"/>
+                <TextBlock Grid.Row="6" Text="Hamulec: "/>
+                <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Hamulec, Converter={StaticResource BoolValueConverter}}"/>
+                <TextBlock Grid.Row="7" Text="Sprężyna: "/>
+                <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding Sprezyna, Converter={StaticResource BoolValueConverter}}"/>
+            </Grid>
+        </Border>
+    </StackPanel>
 </UserControl>

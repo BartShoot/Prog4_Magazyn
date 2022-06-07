@@ -176,6 +176,7 @@ namespace Magazyn.ViewModels
                 Title = "Dodaj uchwyt",
                 Content = new ProwadniceAdd()
             };
+            window.SizeToContent = SizeToContent.WidthAndHeight;
             window.Show();
         }
         public ICommand OpenEditWindowCommand { get; set; }
@@ -188,6 +189,7 @@ namespace Magazyn.ViewModels
                 Content = new ProwadniceEdit()
             };
             window.DataContext = new ProwadniceViewModel(param);
+            window.SizeToContent = SizeToContent.WidthAndHeight;
             window.Show();
         }
     }

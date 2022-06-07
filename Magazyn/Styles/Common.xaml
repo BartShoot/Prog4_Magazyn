@@ -1,9 +1,63 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
-    <Color x:Key="ColorPrimary1">#151f61</Color>
-    <Color x:Key="ColorPrimary2">#1b212c</Color>
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=netstandard" xmlns:local="clr-namespace:Magazyn.Services">
+
+    <Color x:Key="ColorPrimary1">#8ecaf4</Color>
+    <Color x:Key="ColorPrimary2">#618aa7</Color>
 
     <SolidColorBrush x:Key="BrushPrimary1" Color="{StaticResource ColorPrimary1}"/>
     <SolidColorBrush x:Key="BrushPrimary2" Color="{StaticResource ColorPrimary2}"/>
+
+    <sys:Double x:Key="DefFontSize">15</sys:Double>
+
+    <local:BoolValueConverter x:Key="BoolValueConverter"/>
+
+    <Style TargetType="{x:Type Control}" x:Key="fontSizeStyle">
+        <Setter Property="FontSize" Value="{StaticResource DefFontSize}"/>
+        <Setter Property="Foreground" Value="#1e1e1e"/>
+    </Style>
+
+    <Style x:Key="RightAlignStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextAlignment" Value="Right" />
+    </Style>
+
+    <Style TargetType="Button" BasedOn="{StaticResource fontSizeStyle}">
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Background" Value="{StaticResource BrushPrimary1}"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+    </Style>
+
+    <Style TargetType="DataGrid" BasedOn="{StaticResource fontSizeStyle}">
+        <Setter Property="AlternatingRowBackground" Value="#bbdcf4"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="{StaticResource BrushPrimary2}"/>
+        <Setter Property="VerticalGridLinesBrush" Value="{StaticResource BrushPrimary1}"/>
+    </Style>
+    <Style TargetType="TextBox" BasedOn="{StaticResource fontSizeStyle}"/>
+    <Style TargetType="Label" BasedOn="{StaticResource fontSizeStyle}"/>
+
+    <Style TargetType="DataGridCell">
+        <Setter Property="BorderThickness" Value="5,1"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="FontWeight" Value="Medium"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="DataGridRow">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource BrushPrimary1}"/>
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{StaticResource BrushPrimary2}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+
 </ResourceDictionary>
