@@ -26,7 +26,11 @@
             <DataTemplate DataType="{x:Type viewmodels:AkcesoriaViewModel}">
                 <views:AkcesoriaView/>
             </DataTemplate>
-            
+
+            <DataTemplate DataType="{x:Type viewmodels:PlytyViewModel}">
+                <views:PlytyView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
