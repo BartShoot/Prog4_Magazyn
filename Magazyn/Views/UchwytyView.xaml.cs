@@ -1,5 +1,4 @@
-﻿using Magazyn.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +16,11 @@ using System.Windows.Shapes;
 namespace Magazyn.Views
 {
     /// <summary>
-    /// Interaction logic for ZawiasyAdd.xaml
+    /// Interaction logic for UchwytyView.xaml
     /// </summary>
-    public partial class ZawiasyAdd : UserControl
+    public partial class UchwytyView : UserControl
     {
-        public ZawiasyAdd()
+        public UchwytyView()
         {
             InitializeComponent();
         }

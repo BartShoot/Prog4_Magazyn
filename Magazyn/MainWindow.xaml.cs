@@ -16,13 +16,5 @@ namespace Magazyn
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //var test = new ZawiasAdd();
-            var container = new Window();
-            //container.Content = test;
-            container.Show();
-        }
     }
 }

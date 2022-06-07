@@ -1,11 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using FastMember;
 using Magazyn.Models;
 using Magazyn.Services;
 using Magazyn.Views;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,15 +13,67 @@ namespace Magazyn.ViewModels
 {
     public partial class ZawiasyViewModel : ViewModelBase
     {
-        public Zawiasy _zawias = new Zawiasy();
-
-        public GenericDataService<Zawiasy> _genericDataService = 
+        public GenericDataService<Zawiasy> _genericDataService =
             new GenericDataService<Zawiasy>(new DbContextFactory());
+        public ZawiasyViewModel()
+        {
+            _zawias = new();
+            DeleteZawiasCommand = new RelayCommand<Zawiasy>((param) => DeleteZawias(param));
+            AddZawiasCommand = new RelayCommand(AddZawias);
+            UpdateZawiasCommand = new RelayCommand<Zawiasy>((param) => UpdateZawias(param));
+            OpenAddWindowCommand = new RelayCommand(OpenAddWindow);
+            OpenEditWindowCommand = new RelayCommand<Zawiasy>((param) => OpenEditWindow(param));
 
+            ListaZawiasow = new();
+            var result = Task.Run(() => GetAllZawiasAsync()).Result.ToList();
+            foreach (var item in result)
+            {
+                ListaZawiasow.Add(item);
+            }
+        }
+
+        public ZawiasyViewModel(Zawiasy zawias) : this()
+        {
+            _zawias = new Zawiasy
+            {
+                Id = zawias.Id,
+                Firma = zawias.Firma,
+                Model = zawias.Model,
+                Cena = zawias.Cena,
+                Ilosc = zawias.Ilosc,
+                KatOtwarcia = zawias.KatOtwarcia,
+                Hamulec = zawias.Hamulec,
+                Sprezyna = zawias.Sprezyna
+            };
+            _firma = zawias.Firma;
+            _model = zawias.Model;
+            _cena = zawias.Cena;
+            _ilosc = zawias.Ilosc;
+            _katOtwarcia = zawias.KatOtwarcia;
+            _hamulec = zawias.Hamulec;
+            _sprezyna = zawias.Sprezyna;
+        }
+
+        private Zawiasy _zawias;
+        public Zawiasy Zawias
+        {
+            get => _zawias;
+            set
+            {
+                _zawias = value;
+                OnPropertyChanged(nameof(Zawias));
+            }
+        }
+        
+        private ObservableCollection<Zawiasy> _listaZawiasow;
         public ObservableCollection<Zawiasy> ListaZawiasow
         {
-            get;
-            set;
+            get => _listaZawiasow;
+            set
+            {
+                _listaZawiasow = value;
+                OnListChanged(ListaZawiasow);
+            }
         }
 
         private string _firma;
@@ -97,14 +147,6 @@ namespace Magazyn.ViewModels
             }
         }
 
-        public ZawiasyViewModel()
-        {
-            AddZawiasCommand = new RelayCommand(AddZawias);
-            OpenAddWindowCommand = new RelayCommand(OpenAddWindow);
-            List<Zawiasy> result = Task.Run(() => GetAllZawiasAsync()).Result.ToList();
-            ListaZawiasow = new ObservableCollection<Zawiasy>(result);
-        }
-
         public ICommand AddZawiasCommand { get; }
         public async void AddZawias()
         {
@@ -112,10 +154,33 @@ namespace Magazyn.ViewModels
             _zawias.Model = Model;
             _zawias.Cena = Cena;
             _zawias.Ilosc = Ilosc;
-            _zawias.Kat_Otwarcia = KatOtwarcia;
+            _zawias.KatOtwarcia = KatOtwarcia;
             _zawias.Hamulec = Hamulec;
             _zawias.Sprezyna = Sprezyna;
             await _genericDataService.Create(_zawias);
+            
+        }
+        public ICommand GetAllZawiasCommand { get; }
+        public async Task<IEnumerable<Zawiasy>> GetAllZawiasAsync()
+        {
+            return await _genericDataService.GetAllAsync();
+        }
+        public ICommand UpdateZawiasCommand { get; set; }
+        public void UpdateZawias(Zawiasy param)
+        {
+            param.Firma = Firma;
+            param.Model = Model;
+            param.Cena = Cena;
+            param.Ilosc = Ilosc;
+            param.KatOtwarcia = KatOtwarcia;
+            param.Hamulec = Hamulec;
+            param.Sprezyna = Sprezyna;
+            _ = _genericDataService.Update(param.Id, param);
+        }
+        public ICommand DeleteZawiasCommand { get; set; }
+        public void DeleteZawias(Zawiasy param)
+        {
+            _ = _genericDataService.Delete(param.Id);
         }
 
         public ICommand OpenAddWindowCommand { get; }
@@ -123,17 +188,24 @@ namespace Magazyn.ViewModels
         {
             var window = new Window
             {
+                Name = "AddWindow",
                 Title = "Dodaj zawias",
                 Content = new ZawiasyAdd()
             };
+
             window.Show();
         }
-
-        public ICommand GetAllZawiasCommand { get; }
-        public async Task<List<Zawiasy>> GetAllZawiasAsync()
+        public ICommand OpenEditWindowCommand { get; set; }
+        public void OpenEditWindow(Zawiasy param)
         {
-            ListaZawiasow = (ObservableCollection<Zawiasy>)await _genericDataService.GetAllAsync();
-            return ListaZawiasow.ToList();
+            var window = new Window
+            {
+                Name = "EditWindow",
+                Title = "Edytuj zawias",
+                Content = new ZawiasyEdit()
+            };
+            window.DataContext = new ZawiasyViewModel(param);
+            window.Show();
         }
     }
 }

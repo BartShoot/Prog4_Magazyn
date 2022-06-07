@@ -188,7 +188,7 @@ namespace Magazyn.Migrations
                     b.Property<int>("Ilosc")
                         .HasColumnType("int");
 
-                    b.Property<int>("Kat_Otwarcia")
+                    b.Property<int>("KatOtwarcia")
                         .HasColumnType("int");
 
                     b.Property<string>("Model")

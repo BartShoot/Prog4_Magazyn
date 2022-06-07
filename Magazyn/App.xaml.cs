@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Markup;
 
 namespace Magazyn
 {
@@ -16,6 +18,10 @@ namespace Magazyn
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            FrameworkElement.LanguageProperty.OverrideMetadata(
+                typeof(FrameworkElement),
+                new FrameworkPropertyMetadata(
+                    XmlLanguage.GetLanguage("pl")));
             Window window = new MainWindow();
             window.DataContext = new MainViewModel();
             window.Show();

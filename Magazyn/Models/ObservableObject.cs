@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace Magazyn.Models
 {
@@ -14,6 +14,11 @@ namespace Magazyn.Models
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected void OnListChanged<T>(ObservableCollection<T> listaObiektow) where T : DomainObject
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(listaObiektow)));
         }
     }
 }

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Magazyn.Migrations
 {
     [DbContext(typeof(MagazynDBContext))]
-    [Migration("20220606212334_Initial")]
-    partial class Initial
+    [Migration("20220607090921_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -190,7 +190,7 @@ namespace Magazyn.Migrations
                     b.Property<int>("Ilosc")
                         .HasColumnType("int");
 
-                    b.Property<int>("Kat_Otwarcia")
+                    b.Property<int>("KatOtwarcia")
                         .HasColumnType("int");
 
                     b.Property<string>("Model")

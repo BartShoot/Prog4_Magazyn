@@ -22,6 +22,7 @@ namespace Magazyn.Models
         [Required]
         public int PlytaID { get; set; }
         [Required]
+        [ForeignKey("PlytaID")]
         public Plyty Plyta { get; set; }
     }
 }

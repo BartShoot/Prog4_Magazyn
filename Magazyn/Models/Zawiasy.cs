@@ -20,7 +20,7 @@ namespace Magazyn.Models
         [Required]
         public int Ilosc { get; set; }
         [Required]
-        public int Kat_Otwarcia { get; set; }
+        public int KatOtwarcia { get; set; }
         [Required]
         public bool Hamulec { get; set; }
         [Required]

@@ -4,7 +4,7 @@
 
 namespace Magazyn.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -84,7 +84,7 @@ namespace Magazyn.Migrations
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Cena = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Ilosc = table.Column<int>(type: "int", nullable: false),
-                    Kat_Otwarcia = table.Column<int>(type: "int", nullable: false),
+                    KatOtwarcia = table.Column<int>(type: "int", nullable: false),
                     Hamulec = table.Column<bool>(type: "bit", nullable: false),
                     Sprezyna = table.Column<bool>(type: "bit", nullable: false)
                 },

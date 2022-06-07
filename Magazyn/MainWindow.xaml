@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Magazyn"
-        xmlns:controls="clr-namespace:Magazyn.Controls"
+        xmlns:controls="clr-namespace:Magazyn.Controls" xmlns:navigators="clr-namespace:Magazyn.State.Navigators" d:DataContext="{d:DesignInstance Type=navigators:Navigator}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
@@ -17,106 +17,4 @@
         <controls:NavigationBar DataContext="{Binding Navigator}"/>
         <ContentControl Grid.Row="1" Background="Aqua" Content="{Binding Navigator.CurrentViewModel}"/>
     </Grid>
-    <!--<Window.Resources>
-        <Style TargetType="Window">
-            <Setter Property="FontFamily" Value="Segoe UI"/>
-        </Style>
-
-        <Style TargetType="TabItem">
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5,5,0,0"/>
-                </Style>
-            </Style.Resources>
-        </Style>
-        
-        <Style TargetType="Button">
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Style.Resources>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="Padding" Value="5,2"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-        </Style>
-    </Window.Resources>
-    <Grid>
-        <TabControl Background="LightGray">
-            <TabItem Header="Zawiasy">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="DataGridZawiasy" ItemsSource="{Binding}" Grid.Column="0"/>
-                    <StackPanel Orientation="Vertical" Grid.Column="1">
-                        <Button Content="Dodaj" Click="Button_Click"/>
-                        <Button Content="Edytuj"/>
-                        <Button Content="Usuń"/>
-                    </StackPanel>
-                </Grid>
-            </TabItem>
-
-            <TabItem Header="Uchwyty">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="DataGridUchwyty" ItemsSource="{Binding}" Grid.Column="0"/>
-                    <StackPanel Orientation="Vertical" Grid.Column="1">
-                        <Button Content="Dodaj"/>
-                        <Button Content="Edytuj"/>
-                        <Button Content="Usuń"/>
-                    </StackPanel>
-                </Grid>
-            </TabItem>
-
-            <TabItem Header="Prowadnice">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="DataGridProwadnice" ItemsSource="{Binding}" Grid.Column="0"/>
-                    <StackPanel Orientation="Vertical" Grid.Column="1">
-                        <Button Content="Dodaj"/>
-                        <Button Content="Edytuj"/>
-                        <Button Content="Usuń"/>
-                    </StackPanel>
-                </Grid>
-            </TabItem>
-
-            <TabItem Header="Akcesoria">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="DataGridAkcesoria" ItemsSource="{Binding}" Grid.Column="0"/>
-                    <StackPanel Orientation="Vertical" Grid.Column="1">
-                        <Button Content="Dodaj"/>
-                        <Button Content="Edytuj"/>
-                        <Button Content="Usuń"/>
-                    </StackPanel>
-                </Grid>
-            </TabItem>
-
-            <TabItem Header="Płyty">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="DataGridPlyty" ItemsSource="{Binding}" Grid.Column="0"/>
-                    <StackPanel Orientation="Vertical" Grid.Column="1">
-                        <Button Content="Dodaj"/>
-                        <Button Content="Edytuj"/>
-                        <Button Content="Usuń"/>
-                    </StackPanel>
-                </Grid>
-            </TabItem>
-        </TabControl>
-    </Grid>-->
 </Window>

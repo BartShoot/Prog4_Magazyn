@@ -14,7 +14,11 @@
             <DataTemplate DataType="{x:Type viewmodels:ZawiasyViewModel}">
                 <views:ZawiasyView/>
             </DataTemplate>
-            
+
+            <DataTemplate DataType="{x:Type viewmodels:UchwytyViewModel}">
+                <views:UchwytyView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
