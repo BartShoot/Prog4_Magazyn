@@ -1,5 +1,4 @@
-﻿using FastMember;
-using Magazyn.Models;
+﻿using Magazyn.Models;
 using Magazyn.Views;
 using System;
 using System.Data;
@@ -15,11 +14,6 @@ namespace Magazyn
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void NavigationBar_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
